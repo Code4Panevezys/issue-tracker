@@ -1,6 +1,6 @@
 <?php
 
-namespace interactivesolutions\issuetracker\app\providers;
+namespace opendatalt\issuetracker\app\providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,40 +13,43 @@ class IssueTrackerServiceProvider extends ServiceProvider
      */
     protected $commands = [];
 
-    protected $namespace = 'interactivesolutions\issuetracker\app\http\controllers';
+    protected $namespace = 'opendatalt\issuetracker\app\http\controllers';
 
     /**
      * Bootstrap the application services.
      */
-    public function boot ()
+    public function boot()
     {
         // register artisan commands
-        $this->commands ($this->commands);
+        $this->commands($this->commands);
 
         // loading views
-        $this->loadViewsFrom (__DIR__ . '/../../resources/views', 'IssueTracker');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'IssueTracker');
 
         // loading translations
-        $this->loadTranslationsFrom (__DIR__ . '/../../resources/lang', 'IssueTracker');
+        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'IssueTracker');
 
         // registering elements to publish
-        $this->registerPublishElements ();
+        $this->registerPublishElements();
 
         // registering helpers
-        $this->registerHelpers ();
+        $this->registerHelpers();
 
         // registering routes
-        $this->registerRoutes ();
+        $this->registerRoutes();
+
+        //register providers
+        $this->registerProviders();
     }
 
     /**
      * Register helper function
      */
-    private function registerHelpers ()
+    private function registerHelpers()
     {
         $filePath = __DIR__ . '/../http/helpers.php';
 
-        if (\File::isFile ($filePath))
+        if (file_exists($filePath))
             require_once $filePath;
     }
 
@@ -75,7 +78,7 @@ class IssueTrackerServiceProvider extends ServiceProvider
     /**
      * Registering routes
      */
-    private function registerRoutes ()
+    private function registerRoutes()
     {
         $filePath = __DIR__ . '/../../app/honeycomb/routes.php';
 
@@ -83,6 +86,14 @@ class IssueTrackerServiceProvider extends ServiceProvider
             \Route::group (['namespace' => $this->namespace], function ($router) use ($filePath) {
                 require $filePath;
             });
+    }
+
+    /**
+     * Registering 3rd party providers which are required for this package to run
+     */
+    private function registerProviders()
+    {
+
     }
 }
 

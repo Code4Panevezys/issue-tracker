@@ -1,5 +1,5 @@
 <?php
-namespace interactivesolutions\issuetracker\database\seeds;
+namespace opendatalt\issuetracker\database\seeds;
 
 use Illuminate\Database\Seeder;
 
