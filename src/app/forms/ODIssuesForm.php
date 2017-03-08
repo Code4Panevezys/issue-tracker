@@ -19,7 +19,7 @@ class ODIssuesForm
     public function createForm (bool $edit = false)
     {
         $form = [
-            'storageURL' => route ('admin.api.users'),
+            'storageURL' => route ('admin.api.issues'),
             'buttons'    => [
                 [
                     "class" => "col-centered",
