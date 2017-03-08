@@ -1,18 +1,19 @@
 {
-    "name": "opendata-lt/issue-tracker",
-    "description": "",
-    "keywords": [],
-    "license": "MIT",
-    "authors": [],
-    "repositories": [],
-    "require": {
-        "php": ">=7.0.0",
-        "laravel/framework": "5.3.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "opendatalt\\issuetracker\\": "src/"
-        }
-    },
-    "minimum-stability": "dev"
+  "name": "opendata-lt/issue-tracker",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "authors": [],
+  "repositories": [],
+  "require": {
+    "php": ">=7.0.0",
+    "laravel/framework": "5.3.*",
+    "interactivesolutions/honeycomb-ccms": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "opendatalt\\issuetracker\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
 }
