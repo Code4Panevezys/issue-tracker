@@ -1,7 +1,5 @@
 <?php
 
-//./packages/opendata-lt/issue-tracker/src/app/routes/routes.users.php
-
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
 {
     Route::get('users', ['as' => 'admin.users', 'middleware' => ['acl:opendata_lt_issue_tracker_users_list'], 'uses' => 'ODIssuesController@adminView']);
@@ -24,4 +22,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::delete('users/force', ['as' => 'admin.api.users.force.multi', 'middleware' => ['acl:opendata_lt_issue_tracker_users_force_delete'], 'uses' => 'ODIssuesController@forceDelete']);
     });
 });
-

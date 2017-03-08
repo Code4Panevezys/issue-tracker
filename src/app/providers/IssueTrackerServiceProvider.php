@@ -18,38 +18,38 @@ class IssueTrackerServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot ()
     {
         // register artisan commands
-        $this->commands($this->commands);
+        $this->commands ($this->commands);
 
         // loading views
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'IssueTracker');
+        $this->loadViewsFrom (__DIR__ . '/../../resources/views', 'IssueTracker');
 
         // loading translations
-        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'IssueTracker');
+        $this->loadTranslationsFrom (__DIR__ . '/../../resources/lang', 'IssueTracker');
 
         // registering elements to publish
-        $this->registerPublishElements();
+        $this->registerPublishElements ();
 
         // registering helpers
-        $this->registerHelpers();
+        $this->registerHelpers ();
 
         // registering routes
-        $this->registerRoutes();
+        $this->registerRoutes ();
 
         //register providers
-        $this->registerProviders();
+        $this->registerProviders ();
     }
 
     /**
      * Register helper function
      */
-    private function registerHelpers()
+    private function registerHelpers ()
     {
         $filePath = __DIR__ . '/../http/helpers.php';
 
-        if (file_exists($filePath))
+        if (file_exists ($filePath))
             require_once $filePath;
     }
 
@@ -78,7 +78,7 @@ class IssueTrackerServiceProvider extends ServiceProvider
     /**
      * Registering routes
      */
-    private function registerRoutes()
+    private function registerRoutes ()
     {
         $filePath = __DIR__ . '/../../app/honeycomb/routes.php';
 
@@ -91,7 +91,7 @@ class IssueTrackerServiceProvider extends ServiceProvider
     /**
      * Registering 3rd party providers which are required for this package to run
      */
-    private function registerProviders()
+    private function registerProviders ()
     {
 
     }

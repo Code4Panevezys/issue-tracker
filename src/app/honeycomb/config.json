@@ -1,21 +1,39 @@
 {
-    "general":
-    {
+    "general": {
         "serviceProviderNameSpace": "IssueTracker"
     },
-    "formData":
-    [
+    "formData": {
+        "users": "opendatalt\\issuetracker\\app\\forms\\ODIssuesForm"
+    },
+    "adminMenu": [
+        {
+            "path": "admin\/users",
+            "translation": "IssueTracker::users.page_title",
+            "icon": "fa-exclamation-triangle",
+            "aclPermission": "opendata_lt_issue_tracker_users_list"
+        }
     ],
-    "adminMenu":
-    [
-    ],
-    "acl":
-    {
-        "permissions" :
-        [
+    "acl": {
+        "permissions": [
+            {
+                "name": "admin.users",
+                "controller": "opendatalt\\issuetracker\\app\\http\\controllers\\ODIssuesController",
+                "actions": [
+                    "opendata_lt_issue_tracker_users_list",
+                    "opendata_lt_issue_tracker_users_create",
+                    "opendata_lt_issue_tracker_users_update",
+                    "opendata_lt_issue_tracker_users_delete",
+                    "opendata_lt_issue_tracker_users_force_delete"
+                ]
+            }
         ],
-        "rolesActions" :
-        [
-        ]
+        "rolesActions": {
+            "project-admin": [
+                "opendata_lt_issue_tracker_users_list",
+                "opendata_lt_issue_tracker_users_create",
+                "opendata_lt_issue_tracker_users_update",
+                "opendata_lt_issue_tracker_users_delete"
+            ]
+        }
     }
 }
