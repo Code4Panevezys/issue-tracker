@@ -82,6 +82,7 @@ class ODIssuesController extends HCBaseController
             $data = $this->getInputData ();
 
         $record = ODIssues::create (array_get ($data, 'record'));
+        $record->resources()->sync(array_get ($data, 'resources'));
 
         return $this->getSingleRecord ($record->id);
     }
@@ -99,6 +100,7 @@ class ODIssuesController extends HCBaseController
         $data = $this->getInputData ();
 
         $record->update (array_get ($data, 'record'));
+        $record->resources()->sync(array_get ($data, 'resources'));
 
         return $this->getSingleRecord ($record->id);
     }
@@ -249,6 +251,8 @@ class ODIssuesController extends HCBaseController
         array_set ($data, 'record.lat', array_get ($_data, 'lat'));
         array_set ($data, 'record.lon', array_get ($_data, 'lon'));
 
+        array_set ($data, 'resources', array_get ($_data, 'resources'));
+
         return $data;
     }
 
@@ -260,7 +264,7 @@ class ODIssuesController extends HCBaseController
      */
     public function getSingleRecord (string $id)
     {
-        $with = [];
+        $with = ['resources'];
 
         $select = ODIssues::getFillableFields ();
 

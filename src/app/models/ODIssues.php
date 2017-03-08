@@ -3,6 +3,7 @@
 namespace opendatalt\issuetracker\app\models;
 
 use interactivesolutions\honeycombcore\models\HCUuidModel;
+use interactivesolutions\honeycombresources\app\models\HCResources;
 
 class ODIssues extends HCUuidModel
 {
@@ -20,4 +21,14 @@ class ODIssues extends HCUuidModel
      */
     protected $fillable = ['id', 'reporter_email', 'comment', 'lat', 'lon'];
 
+
+    /**
+     * Images belonging to issue
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function resources ()
+    {
+        return $this->belongsToMany(HCResources::class, ODIssuesResources::getTableName(), 'issue_id', 'resource_id');
+    }
 }
