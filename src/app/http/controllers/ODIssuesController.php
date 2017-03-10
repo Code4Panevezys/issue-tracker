@@ -20,8 +20,8 @@ class ODIssuesController extends HCBaseController
         $config = [
             'title'       => trans ('IssueTracker::issues.page_title'),
             'listURL'     => route ('admin.api.issues'),
-            'newFormUrl'  => route ('admin.api.form-manager', ['users-new']),
-            'editFormUrl' => route ('admin.api.form-manager', ['users-edit']),
+            'newFormUrl'  => route ('admin.api.form-manager', ['issues-new']),
+            'editFormUrl' => route ('admin.api.form-manager', ['issues-edit']),
             'imagesUrl'   => route ('resource.get', ['/']),
             'headers'     => $this->getAdminListHeader (),
         ];

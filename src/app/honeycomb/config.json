@@ -3,7 +3,7 @@
         "serviceProviderNameSpace": "IssueTracker"
     },
     "formData": {
-        "users": "opendatalt\\issuetracker\\app\\forms\\ODIssuesForm"
+        "issues": "opendatalt\\issuetracker\\app\\forms\\ODIssuesForm"
     },
     "adminMenu": [
         {
