@@ -1,6 +1,7 @@
 <?php
 
-//packages/opendata-lt/issue-tracker/src/app/routes/routes.issues.php
+//opendata-lt/issue-tracker/src/app/routes/routes.issues.php
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
 {
@@ -26,5 +27,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
 });
 
 // for testing purposes
-Route::post('api/v1/users', ['uses' => 'ODIssuesController@create']);
+Route::post('api/v1/issues', ['uses' => 'ODIssuesController@create']);
 
