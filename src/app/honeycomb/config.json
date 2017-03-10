@@ -10,7 +10,7 @@
             "path": "admin\/issues",
             "translation": "IssueTracker::issues.page_title",
             "icon": "fa-exclamation-triangle",
-            "aclPermission": "opendata_lt_issue_tracker_users_list"
+            "aclPermission": "opendata_lt_issue_tracker_issues_list"
         }
     ],
     "acl": {
@@ -19,20 +19,20 @@
                 "name": "admin.users",
                 "controller": "opendatalt\\issuetracker\\app\\http\\controllers\\ODIssuesController",
                 "actions": [
-                    "opendata_lt_issue_tracker_users_list",
-                    "opendata_lt_issue_tracker_users_create",
-                    "opendata_lt_issue_tracker_users_update",
-                    "opendata_lt_issue_tracker_users_delete",
-                    "opendata_lt_issue_tracker_users_force_delete"
+                    "opendata_lt_issue_tracker_issues_list",
+                    "opendata_lt_issue_tracker_issues_create",
+                    "opendata_lt_issue_tracker_issues_update",
+                    "opendata_lt_issue_tracker_issues_delete",
+                    "opendata_lt_issue_tracker_issues_force_delete"
                 ]
             }
         ],
         "rolesActions": {
             "project-admin": [
-                "opendata_lt_issue_tracker_users_list",
-                "opendata_lt_issue_tracker_users_create",
-                "opendata_lt_issue_tracker_users_update",
-                "opendata_lt_issue_tracker_users_delete"
+                "opendata_lt_issue_tracker_issues_list",
+                "opendata_lt_issue_tracker_issues_create",
+                "opendata_lt_issue_tracker_issues_update",
+                "opendata_lt_issue_tracker_issues_delete"
             ]
         }
     }

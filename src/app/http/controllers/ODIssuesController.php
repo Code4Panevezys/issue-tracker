@@ -26,15 +26,15 @@ class ODIssuesController extends HCBaseController
             'headers'     => $this->getAdminListHeader (),
         ];
 
-        if ($this->user ()->can ('opendata_lt_issue_tracker_users_create'))
+        if ($this->user ()->can ('opendata_lt_issue_tracker_issues_create'))
             $config['actions'][] = 'new';
 
-        if ($this->user ()->can ('opendata_lt_issue_tracker_users_update')) {
+        if ($this->user ()->can ('opendata_lt_issue_tracker_issues_update')) {
             $config['actions'][] = 'update';
             $config['actions'][] = 'restore';
         }
 
-        if ($this->user ()->can ('opendata_lt_issue_tracker_users_delete'))
+        if ($this->user ()->can ('opendata_lt_issue_tracker_issues_delete'))
             $config['actions'][] = 'delete';
 
         $config['actions'][] = 'search';
