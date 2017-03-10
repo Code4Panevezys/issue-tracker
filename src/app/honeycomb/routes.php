@@ -16,11 +16,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
         Route::post('issues/{id}/duplicate', ['as' => 'admin.api.issues.duplicate', 'middleware' => ['acl:opendata_lt_issue_tracker_issues_update'], 'uses' => 'ODIssuesController@duplicate']);
         Route::post('issues/restore', ['as' => 'admin.api.issues.restore', 'middleware' => ['acl:opendata_lt_issue_tracker_issues_update'], 'uses' => 'ODIssuesController@restore']);
         Route::post('issues/merge', ['as' => 'admin.api.issues.merge', 'middleware' => ['acl:opendata_lt_issue_tracker_issues_update'], 'uses' => 'ODIssuesController@merge']);
-        Route::post('users', ['middleware' => ['acl:opendata_lt_issue_tracker_issues_create'], 'uses' => 'ODIssuesController@create']);
+        Route::post('issues', ['middleware' => ['acl:opendata_lt_issue_tracker_issues_create'], 'uses' => 'ODIssuesController@create']);
         Route::put('issues/{id}', ['middleware' => ['acl:opendata_lt_issue_tracker_issues_update'], 'uses' => 'ODIssuesController@update']);
         Route::put('issues/{id}/strict', ['as' => 'admin.api.issues.update.strict', 'middleware' => ['acl:opendata_lt_issue_tracker_issues_update'], 'uses' => 'ODIssuesController@updateStrict']);
         Route::delete('issues/{id}', ['middleware' => ['acl:opendata_lt_issue_tracker_issues_delete'], 'uses' => 'ODIssuesController@delete']);
-        Route::delete('users', ['middleware' => ['acl:opendata_lt_issue_tracker_issues_delete'], 'uses' => 'ODIssuesController@delete']);
+        Route::delete('issues', ['middleware' => ['acl:opendata_lt_issue_tracker_issues_delete'], 'uses' => 'ODIssuesController@delete']);
         Route::delete('issues/{id}/force', ['as' => 'admin.api.issues.force', 'middleware' => ['acl:opendata_lt_issue_tracker_issues_force_delete'], 'uses' => 'ODIssuesController@forceDelete']);
         Route::delete('issues/force', ['as' => 'admin.api.issues.force.multi', 'middleware' => ['acl:opendata_lt_issue_tracker_issues_force_delete'], 'uses' => 'ODIssuesController@forceDelete']);
     });
