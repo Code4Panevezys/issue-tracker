@@ -8,7 +8,7 @@
     "adminMenu": [
         {
             "path": "admin\/issues",
-            "translation": "IssueTracker::users.page_title",
+            "translation": "IssueTracker::issues.page_title",
             "icon": "fa-exclamation-triangle",
             "aclPermission": "opendata_lt_issue_tracker_users_list"
         }

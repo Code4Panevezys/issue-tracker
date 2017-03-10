@@ -18,7 +18,7 @@ class ODIssuesController extends HCBaseController
     public function adminView ()
     {
         $config = [
-            'title'       => trans ('IssueTracker::users.page_title'),
+            'title'       => trans ('IssueTracker::issues.page_title'),
             'listURL'     => route ('admin.api.issues'),
             'newFormUrl'  => route ('admin.api.form-manager', ['users-new']),
             'editFormUrl' => route ('admin.api.form-manager', ['users-edit']),
@@ -52,19 +52,19 @@ class ODIssuesController extends HCBaseController
         return [
             'reporter_email' => [
                 "type"  => "text",
-                "label" => trans ('IssueTracker::users.reporter_email'),
+                "label" => trans ('IssueTracker::issues.reporter_email'),
             ],
             'comment'        => [
                 "type"  => "text",
-                "label" => trans ('IssueTracker::users.comment'),
+                "label" => trans ('IssueTracker::issues.comment'),
             ],
             'lat'            => [
                 "type"  => "text",
-                "label" => trans ('IssueTracker::users.lat'),
+                "label" => trans ('IssueTracker::issues.lat'),
             ],
             'lon'            => [
                 "type"  => "text",
-                "label" => trans ('IssueTracker::users.lon'),
+                "label" => trans ('IssueTracker::issues.lon'),
             ],
 
         ];

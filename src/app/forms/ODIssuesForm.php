@@ -31,22 +31,22 @@ class ODIssuesForm
                 [
                     "type"    => "singleLine",
                     "fieldID" => "reporter_email",
-                    "label"   => trans ("IssueTracker::users.reporter_email"),
+                    "label"   => trans ("IssueTracker::issues.reporter_email"),
                 ], [
                     "type"            => "textArea",
                     "fieldID"         => "comment",
-                    "label"           => trans ("IssueTracker::users.comment"),
+                    "label"           => trans ("IssueTracker::issues.comment"),
                     "required"        => 1,
                     "requiredVisible" => 1,
                     "rows"            => 10,
                 ], [
                     "type"    => "singleLine",
                     "fieldID" => "lat",
-                    "label"   => trans ("IssueTracker::users.lat"),
+                    "label"   => trans ("IssueTracker::issues.lat"),
                 ], [
                     "type"    => "singleLine",
                     "fieldID" => "lon",
-                    "label"   => trans ("IssueTracker::users.lon"),
+                    "label"   => trans ("IssueTracker::issues.lon"),
                 ], [
                     "label"     => trans ("HCResources::resources.resource"),
                     "type"      => "resource",
