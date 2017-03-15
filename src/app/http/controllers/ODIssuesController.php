@@ -251,7 +251,7 @@ class ODIssuesController extends HCBaseController
         array_set ($data, 'record.lat', array_get ($_data, 'lat'));
         array_set ($data, 'record.lon', array_get ($_data, 'lon'));
 
-        array_set ($data, 'resources', array_get ($_data, 'resources'));
+        array_set ($data, 'resources', array_get ($_data, 'resources', []));
 
         return $data;
     }
