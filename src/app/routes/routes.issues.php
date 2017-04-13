@@ -25,3 +25,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
 
 // for testing purposes
 Route::post('api/v1/issues', ['uses' => 'ODIssuesController@create']);
+Route::post ('api/v1/resources', ['uses' => 'HCResourcesController@create']);
